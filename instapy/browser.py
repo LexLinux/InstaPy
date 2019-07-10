@@ -91,7 +91,8 @@ def set_selenium_local_session(proxy_address,
         chrome_options.add_argument('--dns-prefetch-disable')
         chrome_options.add_argument('--lang=en-US')
         chrome_options.add_argument('--disable-setuid-sandbox')
-
+        chrome_options.add_argument('--window-size=1440,2560')
+        
         # this option implements Chrome Headless, a new (late 2017)
         # GUI-less browser. chromedriver 2.9 and above required
         if headless_browser:
@@ -103,7 +104,7 @@ def set_selenium_local_session(proxy_address,
                     '--blink-settings=imagesEnabled=false')
 
             # replaces browser User Agent from "HeadlessChrome".
-            user_agent = "Chrome"
+            user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A"
             chrome_options.add_argument('user-agent={user_agent}'
                                         .format(user_agent=user_agent))
 
